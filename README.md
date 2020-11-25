@@ -7,6 +7,9 @@
 - 【WordPress】wp_title は非推奨！title タグにタイトルを出力する方法
   https://tech-dig.jp/get-title/
 
+- WordPress サイト内検索機能の実装方法
+  https://hirashimatakumi.com/blog/3109.html
+
 ### 個別ページ
 
 - WordPress：「前の記事」「次の記事」7 つのカスタマイズ方法

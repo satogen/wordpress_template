@@ -1,11 +1,7 @@
+<?php get_header(); ?>
+
 <h1>トップページです</h1>
 
-<?php
-while (have_posts()) :
-  the_post();
-?>
-  <!-- 記事単体 -->
-  <?php get_template_part('parts/article'); ?>
+<?php get_template_part('assets/template/article_index'); ?>
 
-<?php endwhile; ?>
-<?php get_template_part('parts/pagination'); ?>
+<?php get_footer(); ?>

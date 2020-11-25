@@ -5,15 +5,22 @@
  */
 ?>
 <?php
+function wp_document_title_parts($title)
+{
+  if (is_home() || is_front_page()) {
+    unset($title['tagline']); // キャッチフレーズを出力しない
+  } else if (is_category()) {
+    $title['title'] = '「' . $title['title'] . '」カテゴリーの記事一覧';
+  } else if (is_tag()) {
+    $title['title'] = '「' . $title['title'] . '」タグの記事一覧';
+  } else if (is_archive()) {
+    $title['title'] = $title['title'] . 'の記事一覧';
+  }
+  return $title;
+}
+add_filter('document_title_parts', 'wp_document_title_parts', 10, 1);
+add_theme_support('title-tag');
 
-/**
- *
- * @since Start 1.6
- *
- * @param array  $urls           URLs to print for resource hints.
- * @param string $relation_type  The relation type the URLs are printed.
- * @return array $urls           URLs to print for resource hints.
- */
 
 // add_theme_support('post-thumbnails');
 // add_filter( 'show_admin_bar', '__return_false' );
@@ -35,6 +42,4 @@
 // }
 // }
 // add_action('bcn_after_fill', 'foo_pop');
-// update_option('siteurl', 'http://localhost:8080/wordpress/');
-// update_option('home', 'http://localhost:8080/wordpress/');
 ?>

@@ -1,7 +1,8 @@
 <?php
-/*
-Template Name:　投稿ページ
-*/
+
+/**
+ * Template Name: 投稿ページ
+ */
 ?>
 
 <?php

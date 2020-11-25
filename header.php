@@ -1,3 +1,9 @@
+<?php
+
+/**
+ * Template Name: ヘッダー
+ */
+?>
 <!DOCTYPE html>
 <html>
 

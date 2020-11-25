@@ -1,13 +1,19 @@
 <?php
 
 /**
-*
-* @since Start 1.6
-*
-* @param array  $urls           URLs to print for resource hints.
-* @param string $relation_type  The relation type the URLs are printed.
-* @return array $urls           URLs to print for resource hints.
-*/
+ * Template Name: Wordpressの機能の設定ファイル
+ */
+?>
+<?php
+
+/**
+ *
+ * @since Start 1.6
+ *
+ * @param array  $urls           URLs to print for resource hints.
+ * @param string $relation_type  The relation type the URLs are printed.
+ * @return array $urls           URLs to print for resource hints.
+ */
 
 // add_theme_support('post-thumbnails');
 // add_filter( 'show_admin_bar', '__return_false' );

@@ -5,6 +5,8 @@
  */
 ?>
 <?php
+
+// タイトルのカスタマイズ
 function wp_document_title_parts($title)
 {
   if (is_home() || is_front_page()) {
@@ -18,8 +20,10 @@ function wp_document_title_parts($title)
   }
   return $title;
 }
+
 add_filter('document_title_parts', 'wp_document_title_parts', 10, 1);
 add_theme_support('title-tag');
+// タイトルのカスタマイズここまで
 
 
 // add_theme_support('post-thumbnails');

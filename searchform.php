@@ -1,4 +1,7 @@
-<form role="search" method="get" id="searchform" class="searchform" action="<?php echo home_url() ?>">
-  <input class="searchForm-input" type="text" value="" name="s" id="s"/>
-  <button id="searchsubmit" class="searchForm-submit" type="submit"></button>
+<form method="get" id="searchform" action="<?php bloginfo('url'); ?>">
+  <input type="text" name="s" id="s" placeholder="SEARCH" />
+  <button type="submit">検索する</button>
 </form>
+
+<!-- 参考記事 -->
+<!-- https://hirashimatakumi.com/blog/3109.html -->

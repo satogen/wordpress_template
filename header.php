@@ -15,5 +15,5 @@
 
 <body <?php body_class(); ?>>
   <header>
-    ヘッダー
+    検索欄：<?php get_search_form(); ?>
   </header>

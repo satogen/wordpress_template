@@ -1,47 +1,32 @@
 <?php get_header(); ?>
-<?php $value = get_query_var("s" );
+<?php $value = get_query_var("s"); ?>
+
+検索結果：<?php echo $value ?>"の検索結果
+
+<?php //記事数を指定する場合
+// query_posts($query_string.'&posts_per_page=12'); 
 ?>
 
-<!-- メインページ部分 -->
-<div class="main">
-
-  <div class="artcles_index">
-    <p id="index">ARTICLES / SEARCH</p>
-    <p><span style="font-weight: 600;font-size: 15px;">検索結果</span>"<?php echo $value ?>"の検索結果</p>
-  </div>
+<?php if (have_posts()) : ?>
   <!-- 記事一覧開始 -->
-  <?php //query_posts('posts_per_page=4'); ?>
+  <?php
+  while (have_posts()) :
+    the_post();
+  ?>
+    <!-- 記事を表示 -->
+    <?php get_template_part('parts/article'); ?>
+  <?php endwhile; ?>
+  <!-- 記事一覧終わり -->
 
-  <?php if (have_posts()) :?>
+  <?php get_template_part('parts/pagination'); ?>
+<?php else : ?>
+  <div class="no_article_box">
+    <p>投稿記事はありません</p>
+  </div>
 
-    <div id="content_main">
-      <?php
-      while (have_posts()) :
-        the_post();
-        ?>
-		<?php get_template_part('article'); ?>
+<?php endif; ?>
+<!--ページ送り-->
+</div>
 
-        <?php endwhile;?>
-      </div>
-      <!-- 記事一覧終わり -->
-
-      <div id="pagenation">
-
-        <?php the_posts_pagination(array(
-          'mid_size' => 2,
-          'prev_text'           => '＜',
-          'next_text'           => '＞',
-          'screen_reader_text'  => ' ',));  ?>
-
-        </div>
-      <?php else : ?>
-	<div class="no_article_box">
-        <p>投稿記事はありません</p>		
-	</div>
-
-      <?php endif; ?>
-      <!--ページ送り-->
-    </div>
-
-    <!-- メインページ部分ここまで -->
-    <?php get_footer(); ?>
+<!-- メインページ部分ここまで -->
+<?php get_footer(); ?>

@@ -25,25 +25,18 @@ add_filter('document_title_parts', 'wp_document_title_parts', 10, 1);
 add_theme_support('title-tag');
 // タイトルのカスタマイズここまで
 
+function sng_register_sidebars()
+{
+  //メインのサイドバー
+  register_sidebar(array(
+    'id' => 'sidebar1',
+    'name' => 'サイドバー',
+    'description' => 'メインのサイドバーです。スマホで見たときにはページ下に配置されます。',
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h4 class="widgettitle dfont">',
+    'after_title' => '</h4>',
+  ));
+} //END sng_register_sidebars
 
-// add_theme_support('post-thumbnails');
-// add_filter( 'show_admin_bar', '__return_false' );
-// function twpp_enqueue_scripts() {
-//   wp_enqueue_script(
-//     'main-script',
-//     get_template_directory_uri() . '/js/header_hum.js',
-//     false,
-//     true
-//   );
-// }
-
-// add_action( 'wp_enqueue_scripts', 'twpp_enqueue_scripts' );
-
-// function foo_pop($trail)
-// {
-// {
-// array_shift($trail->trail);
-// }
-// }
-// add_action('bcn_after_fill', 'foo_pop');
 ?>

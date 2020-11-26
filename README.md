@@ -2,6 +2,10 @@
 
 ## 参考記事
 
+### wordpress の基本ファイル構成
+
+http://wpdocs.osdn.jp/wiki/images/wp-template-hierarchy.jpg
+
 ### サイトの基本設定
 
 - 【WordPress】wp_title は非推奨！title タグにタイトルを出力する方法
